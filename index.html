@@ -1,311 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Atatürk’ü fotoğraflarla tanıyalım. Hazırlayan: Halil Alkayış">
-<title>Atatürk’ü Tanıyalım | Hazırlayan: Halil Alkayış</title>
+<title>Atatürk'ü Tanıyalım</title>
+
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:'Segoe UI',Roboto,Arial,sans-serif;background:#f4f6f9;color:#2c3e50;line-height:1.75}
-.editor-bar{background:#111;color:#fff;text-align:center;padding:9px 15px;font-size:14px;border-bottom:3px solid #e74c3c}
-.editor-bar span{color:#ff6b5b;font-weight:bold}
-header{background:linear-gradient(135deg,#b71c1c,#880e4f);color:#fff;text-align:center;padding:48px 20px}
-header h1{margin:0;font-size:clamp(28px,6vw,42px);text-shadow:2px 2px 4px rgba(0,0,0,.3)}
-header p{margin:10px 0 0;font-size:18px;opacity:.95}
-.by{display:inline-block;margin-top:16px;padding:6px 18px;border:1px solid rgba(255,255,255,.5);border-radius:20px;font-size:14px}
-nav{background:#1e272e;padding:10px 5px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,.2)}
-nav a{color:#ecf0f1;text-decoration:none;margin:3px 4px;padding:7px 14px;display:inline-block;font-size:14px;font-weight:600;border-radius:20px;background:rgba(255,255,255,.08);transition:.3s}
-nav a:hover{background:#e74c3c;transform:scale(1.05)}
-#progress{position:fixed;top:0;left:0;height:4px;background:#f1c40f;width:0;z-index:300}
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-.hero{background:#fff;text-align:center;padding:40px 20px;border-bottom:3px solid #e74c3c}
-.hero .photo{max-width:380px;margin:0 auto 18px}
-.hero h2{color:#b71c1c;font-size:30px;margin:10px 0}
-.hero p{max-width:820px;margin:0 auto 12px;text-align:justify;color:#444}
-.criteria{max-width:820px;margin:20px auto 0;background:#fff8e1;border-left:6px solid #f1c40f;padding:16px 20px;border-radius:10px;text-align:left}
-.criteria h3{margin:0 0 6px;color:#b71c1c}
-.criteria p{margin:0;text-align:left}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:24px}
-.stat{background:#1e272e;color:#fff;padding:14px 22px;border-radius:14px;min-width:130px}
-.stat b{display:block;font-size:26px;color:#f1c40f}
-.stat small{font-size:13px;color:#cfd8dc}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #222;
+  line-height: 1.7;
+}
 
-section{padding:45px 20px;max-width:1150px;margin:auto;scroll-margin-top:60px}
-section h2.title{text-align:center;color:#b71c1c;font-size:30px;margin:0 0 30px}
-section h2.title::after{content:'';display:block;width:80px;height:4px;background:#e74c3c;margin:10px auto 0;border-radius:2px}
+header {
+  background: #a71919;
+  color: white;
+  text-align: center;
+  padding: 35px 15px;
+}
 
-.quote{max-width:850px;margin:30px auto 0;text-align:center;font-size:19px;font-style:italic;color:#555;min-height:90px;padding:0 20px}
-.quote b{display:block;margin-top:8px;font-style:normal;font-size:14px;color:#b71c1c}
+header h1 {
+  margin: 0;
+  font-size: 36px;
+}
 
-/* Sekmeler */
-.tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:28px}
-.tab{border:2px solid #b71c1c;background:#fff;color:#b71c1c;padding:11px 22px;border-radius:30px;font-size:16px;font-weight:700;cursor:pointer;transition:.25s}
-.tab:hover{background:#fdecea}
-.tab.active{background:#b71c1c;color:#fff;box-shadow:0 6px 16px rgba(183,28,28,.35)}
-.panel{display:none;animation:fade .5s}
-.panel.active{display:block}
-@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.panel-intro{background:#fff;border-radius:14px;padding:20px 24px;margin-bottom:26px;border:1px solid #e1e8ed;box-shadow:0 4px 14px rgba(0,0,0,.05)}
-.panel-intro h3{margin:0 0 8px;color:#1e272e;font-size:22px}
-.panel-intro p{margin:0;color:#555;text-align:justify}
+header p {
+  font-size: 17px;
+}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:26px}
-.card{background:#fff;border-radius:15px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.07);border:1px solid #e1e8ed;display:flex;flex-direction:column;transition:.3s}
-.card:hover{transform:translateY(-6px);box-shadow:0 14px 30px rgba(0,0,0,.15)}
-.img-box{position:relative;height:260px;background:#111;overflow:hidden;cursor:zoom-in}
-.img-box img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform .5s}
-.card:hover .img-box img{transform:scale(1.07)}
-.tag{position:absolute;top:12px;right:12px;background:rgba(183,28,28,.92);color:#fff;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:bold;z-index:2}
-.zoom{position:absolute;bottom:10px;left:12px;background:rgba(0,0,0,.6);color:#fff;font-size:12px;padding:3px 10px;border-radius:10px;z-index:2}
-.card-body{padding:20px;flex-grow:1}
-.card h4{margin:0 0 10px;font-size:20px;color:#1e272e;border-bottom:2px solid #f1f2f6;padding-bottom:8px}
-.card p{margin:0;font-size:14.5px;color:#555;text-align:justify}
-details{margin-top:14px;background:#f8f9fa;border:1px solid #e9ecef;border-radius:8px;padding:9px 13px}
-summary{cursor:pointer;font-weight:bold;color:#b71c1c;font-size:13.5px}
-details p{margin-top:8px;font-size:13.5px}
+nav {
+  background: #252525;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-/* Zaman çizelgesi */
-.filters{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-bottom:20px}
-.filter{border:none;background:#e1e8ed;color:#333;padding:8px 16px;border-radius:20px;cursor:pointer;font-weight:600;font-size:14px}
-.filter.active{background:#e74c3c;color:#fff}
-.timeline{background:#fff;padding:20px 30px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,.06);border:1px solid #e1e8ed}
-.t-item{display:flex;align-items:center;gap:15px;padding:14px 0;border-bottom:1px solid #edf2f7;transition:.3s}
-.t-item:last-child{border-bottom:none}
-.t-item.hide{display:none}
-.badge{background:#e74c3c;color:#fff;padding:6px 12px;border-radius:20px;font-weight:bold;font-size:13px;min-width:125px;text-align:center}
-.badge.g1{background:#2e7d32}.badge.g2{background:#1565c0}.badge.g3{background:#ef6c00}.badge.g0{background:#6a1b9a}
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 7px 10px;
+  display: inline-block;
+  font-weight: bold;
+}
 
-/* Biliyor muydunuz */
-.fun{background:linear-gradient(135deg,#1e272e,#2c3e50);color:#fff;padding:28px;border-radius:15px;border-left:6px solid #f1c40f;box-shadow:0 6px 18px rgba(0,0,0,.15);max-width:900px;margin:auto}
-.fun h3{margin:0 0 10px;color:#f1c40f}
-.fun p{margin:0 0 16px;font-size:16px;min-height:80px}
+nav a:hover {
+  color: #ffcccc;
+}
 
-/* Test */
-.quiz{background:#fff;max-width:760px;margin:auto;padding:28px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,.08);border:1px solid #e1e8ed}
-.q-top{display:flex;justify-content:space-between;font-size:14px;color:#777;margin-bottom:10px}
-.bar{height:8px;background:#eceff1;border-radius:6px;overflow:hidden;margin-bottom:18px}
-.bar div{height:100%;width:0;background:#e74c3c;transition:width .4s}
-.q-text{font-size:19px;font-weight:700;margin-bottom:16px;color:#1e272e}
-.opt{display:block;width:100%;text-align:left;margin:8px 0;padding:12px 16px;border-radius:10px;border:2px solid #dfe6e9;background:#fff;font-size:16px;cursor:pointer;transition:.2s;color:#2c3e50}
-.opt:hover:not(:disabled){border-color:#e74c3c;background:#fff5f4}
-.opt.correct{background:#e8f5e9;border-color:#2e7d32}
-.opt.wrong{background:#ffebee;border-color:#c62828}
-.feedback{min-height:44px;margin:10px 0;font-size:14.5px;color:#555}
-.btn{display:inline-block;padding:11px 28px;background:#e74c3c;color:#fff;border:none;border-radius:25px;font-weight:bold;font-size:15px;cursor:pointer;box-shadow:0 4px 12px rgba(231,76,60,.4);transition:.3s}
-.btn:hover{background:#c0392b;transform:translateY(-2px)}
-.result{text-align:center}
-.result .score{font-size:52px;font-weight:800;color:#b71c1c}
+main {
+  max-width: 1050px;
+  margin: auto;
+  padding: 20px;
+}
 
-/* Lightbox */
-#lb{position:fixed;inset:0;background:rgba(0,0,0,.9);display:none;align-items:center;justify-content:center;flex-direction:column;z-index:500;padding:20px;cursor:zoom-out}
-#lb.open{display:flex}
-#lb img{max-width:95%;max-height:78vh;border-radius:10px;box-shadow:0 0 40px rgba(0,0,0,.6)}
-#lb p{color:#fff;margin:14px 0 0;text-align:center;max-width:700px}
+section {
+  background: white;
+  margin: 22px 0;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px #00000012;
+}
 
-#top{position:fixed;right:18px;bottom:18px;width:46px;height:46px;border-radius:50%;border:none;background:#b71c1c;color:#fff;font-size:20px;cursor:pointer;display:none;z-index:150;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+h2 {
+  color: #a71919;
+  border-bottom: 2px solid #a71919;
+  padding-bottom: 8px;
+}
 
-footer{background:#1e272e;color:#fff;text-align:center;padding:35px 20px;margin-top:40px}
-footer p{margin:6px 0;color:#bdc3c7;font-size:14.5px}
-footer .name{color:#ff6b5b;font-weight:bold;font-size:18px}
-@media(max-width:600px){.t-item{flex-direction:column;align-items:flex-start;gap:6px}.badge{min-width:0}.timeline{padding:12px 18px}}
+.galeri {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeri img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 9px;
+  background: #e5e5e5;
+  border: 1px solid #ddd;
+}
+
+.karsilama img {
+  height: 260px;
+}
+
+button {
+  background: #a71919;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+button:hover {
+  background: #7e1010;
+}
+
+.soru {
+  padding: 15px;
+  margin: 15px 0;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.soru label {
+  display: block;
+  margin: 7px 0;
+  cursor: pointer;
+}
+
+#sonuc {
+  font-size: 19px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+footer {
+  background: #252525;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 25px;
+}
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 28px;
+  }
+
+  main {
+    padding: 10px;
+  }
+
+  section {
+    padding: 16px;
+  }
+
+  .galeri img,
+  .karsilama img {
+    height: 220px;
+  }
+}
 </style>
 </head>
-<body>
-<div id="progress"></div>
 
-<div class="editor-bar">🌐 Genel Ağ Projesi &nbsp;|&nbsp; Editör ve Hazırlayan: <span>Halil Alkayış</span></div>
+<body>
 
 <header>
-  <h1>🇹🇷 Mustafa Kemal Atatürk</h1>
-  <p>Fotoğraflarla Bir Liderin Hayatı</p>
-  <div class="by">✍️ Bu site Halil Alkayış tarafından hazırlanmıştır</div>
+  <h1>Atatürk'ü Tanıyalım</h1>
+  <p>Türkiye Cumhuriyeti'nin kurucusu Mustafa Kemal Atatürk'ün hayatı ve başarıları</p>
 </header>
 
 <nav>
-  <a href="#hakkinda">🏠 Ana Sayfa</a>
-  <a href="#gruplar">🗂️ Üç Grup</a>
-  <a href="#kronoloji">⏳ Kronoloji</a>
-  <a href="#biliyor">💡 Biliyor muydunuz?</a>
-  <a href="#test">📝 Mini Test</a>
+  <a href="#baslangic">Ana Sayfa</a>
+  <a href="#hayati">Hayatı</a>
+  <a href="#mucadele">Millî Mücadele</a>
+  <a href="#cumhuriyet">Cumhuriyet</a>
+  <a href="#test">Mini Test</a>
 </nav>
 
-<div class="hero" id="hakkinda">
-  <div class="photo card"><div class="img-box" style="height:360px"><img data-photo="hero" alt="Mustafa Kemal Atatürk"></div></div>
-  <h2>Gazi Mustafa Kemal Atatürk (1881 – 1938)</h2>
-  <p>Mustafa Kemal Atatürk, 1881’de Selanik’te doğdu. Önce başarılı bir asker olarak Çanakkale’de ve Millî Mücadele’de adını duyurdu, sonra Türkiye Cumhuriyeti’ni kurarak ilk Cumhurbaşkanı oldu. Cumhuriyet’in ilanından sonra hukuktan eğitime, kadın haklarından dile kadar pek çok alanda yenilik yaptı.</p>
-  <p>Bu genel ağ adresinde onun hayatını fotoğraflar üzerinden tanıyacaksınız. Fotoğrafların üzerine tıklayarak büyütebilir, kartlardaki “Neden bu fotoğraf?” bölümlerini açabilir, sayfanın sonunda kendinizi mini testle sınayabilirsiniz.</p>
+<main>
 
-  <div class="criteria">
-    <h3>📌 Sınıflandırma Ölçütüm</h3>
-    <p>Atatürk’ün hayatındaki olayları, onun <b>toplum içindeki rollerine</b> göre üç gruba ayırdım: <b>1) Asker ve Komutan</b>, <b>2) Devlet Adamı ve Lider</b>, <b>3) İnkılapçı ve Eğitimci</b>. Her grup için üç fotoğraf seçtim ve neden seçtiğimi açıkladım.</p>
-  </div>
+<section id="baslangic">
+  <h2>Mustafa Kemal Atatürk</h2>
 
-  <div class="stats">
-    <div class="stat"><b data-count="3">0</b><small>Ana Grup</small></div>
-    <div class="stat"><b data-count="9">0</b><small>Seçilmiş Fotoğraf</small></div>
-    <div class="stat"><b data-count="57">0</b><small>Yıllık Ömür</small></div>
-    <div class="stat"><b data-count="5">0</b><small>Soruluk Test</small></div>
-  </div>
-  <div class="quote" id="quote"></div>
-</div>
+  <p>
+    Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin kurucusu ve ilk
+    cumhurbaşkanıdır. Hayatı boyunca Türk milletinin bağımsızlığı ve
+    gelişmesi için çalışmıştır. Başarılarıyla tarihe yön vermiştir.
+  </p>
 
-<section id="gruplar">
-  <h2 class="title">🗂️ Atatürk’ün Üç Yüzü</h2>
-  <div class="tabs">
-    <button class="tab active" data-tab="p1">🎖️ Asker ve Komutan</button>
-    <button class="tab" data-tab="p2">🏛️ Devlet Adamı ve Lider</button>
-    <button class="tab" data-tab="p3">💡 İnkılapçı ve Eğitimci</button>
-  </div>
-
-  <!-- GRUP 1 -->
-  <div class="panel active" id="p1">
-    <div class="panel-intro">
-      <h3>1. Grup: Asker ve Komutan</h3>
-      <p>Mustafa Kemal, Harp Okulu ve Harp Akademisi’nde yetişerek Kurmay Yüzbaşı oldu. Trablusgarp, Çanakkale ve Millî Mücadele’de verdiği kararlar, onun askerî yönünün en önemli örnekleridir. Bu gruptaki fotoğraflar, cephedeki kararlılığını gösterir.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="img-box"><span class="tag">1915</span><span class="zoom">🔍 Büyüt</span><img data-photo="canakkale" alt="Çanakkale Cephesi"></div>
-        <div class="card-body">
-          <h4>Çanakkale Cephesi</h4>
-          <p>1915’te 19. Tümen Komutanı olarak Arıburnu, Conkbayırı ve Anafartalar’da düşmanın ilerlemesini durdurdu. Çanakkale’deki başarısı, onu bütün ülkenin tanıdığı bir komutan yaptı.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Siperlerin arasında çekilen bu fotoğraf, onun cephede askerleriyle birlikte olduğunu gösterdiği için seçildi. Askerî liderliğini anlatmak için en doğru kare budur.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">1921</span><span class="zoom">🔍 Büyüt</span><img data-photo="inonu" alt="İnönü Muharebeleri"></div>
-        <div class="card-body">
-          <h4>İnönü Muharebeleri</h4>
-          <p>Millî Mücadele’de düzenli ordunun kurulmasıyla birlikte İnönü’nde kazanılan zaferler, Ankara hükümetine hem askerî hem siyasi güç kazandırdı. Fotoğrafta İsmet Paşa ile birlikte görülüyor.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Bu kare, Millî Mücadele’de komutanların birlikte çalıştığını ve ordunun yeniden güçlendiğini gösterdiği için seçildi.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">1922</span><span class="zoom">🔍 Büyüt</span><img data-photo="kocatepe" alt="Büyük Taarruz"></div>
-        <div class="card-body">
-          <h4>Büyük Taarruz ve Başkomutanlık</h4>
-          <p>26 Ağustos 1922’de başlayan Büyük Taarruz’u Kocatepe’den yönetti. 30 Ağustos’taki Başkomutan Meydan Muharebesi’nin ardından ordular 9 Eylül’de İzmir’e girdi.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Büyük Taarruz, savaşın sonunu belirleyen olaydır. Bu fotoğraf, Başkomutan olarak taşıdığı sorumluluğu en iyi anlatan görüntülerden biri olduğu için seçildi.</p></details>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GRUP 2 -->
-  <div class="panel" id="p2">
-    <div class="panel-intro">
-      <h3>2. Grup: Devlet Adamı ve Lider</h3>
-      <p>Savaşı kazandıktan sonra Atatürk, ülkeyi yönetecek yeni bir düzen kurdu. Türkiye Büyük Millet Meclisi’ni açtı, Cumhuriyet’i ilan etti ve milletiyle sürekli iletişim içinde oldu. Bu gruptaki fotoğraflar onun devlet adamlığını anlatır.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="img-box"><span class="tag">23 Nisan 1920</span><span class="zoom">🔍 Büyüt</span><img data-photo="tbmm" alt="TBMM Açılışı"></div>
-        <div class="card-body">
-          <h4>TBMM’nin Açılışı</h4>
-          <p>İşgal altındaki bir ülkede Ankara’da Türkiye Büyük Millet Meclisi açıldı ve Mustafa Kemal Meclis Başkanı seçildi. “Egemenlik kayıtsız şartsız milletindir” ilkesi bu dönemde yerleşti.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Millî egemenliğin başladığı yeri gösterdiği için seçtim. Yeni devletin temeli bu Meclis’tir.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">1923</span><span class="zoom">🔍 Büyüt</span><img data-photo="cumhuriyet" alt="Cumhurbaşkanı Atatürk"></div>
-        <div class="card-body">
-          <h4>İlk Cumhurbaşkanı</h4>
-          <p>29 Ekim 1923’te Cumhuriyet ilan edildi ve Mustafa Kemal, Türkiye Cumhuriyeti’nin ilk Cumhurbaşkanı seçildi. 1934’te TBMM ona “Atatürk” soyadını verdi.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Bu portre, Cumhuriyet’in lideri olarak onun resmî ve ciddi yüzünü gösterdiği için seçildi.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">1933</span><span class="zoom">🔍 Büyüt</span><img data-photo="ikimk" alt="İki Mustafa Kemal Var"></div>
-        <div class="card-body">
-          <h4>“İki Mustafa Kemal Var”</h4>
-          <p>1933’te gazetelere yansıyan sözünde, birinin kendisi, diğerinin ise onu yaşatacak olan millet olduğunu söyledi. Bu söz, devlet anlayışının halkla bütünleştiğini gösterir.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Atatürk’ün kendi kişisini değil, milleti öne çıkardığını gösterdiği için seçtim.</p></details>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GRUP 3 -->
-  <div class="panel" id="p3">
-    <div class="panel-intro">
-      <h3>3. Grup: İnkılapçı ve Eğitimci</h3>
-      <p>Atatürk’e göre gerçek kurtuluş, ancak eğitimle ve çağdaş bir toplumla mümkündü. Bu yüzden harfleri değiştirdi, okulları birleştirdi, kadınlara hak verdi ve bilimi yaşamın merkezine koydu. Bu gruptaki fotoğraflar onun “Başöğretmen” yönünü anlatır.</p>
-    </div>
-    <div class="cards">
-      <div class="card">
-        <div class="img-box"><span class="tag">1928</span><span class="zoom">🔍 Büyüt</span><img data-photo="harf" alt="Harf İnkılabı"></div>
-        <div class="card-body">
-          <h4>Harf İnkılabı ve Başöğretmenlik</h4>
-          <p>1 Kasım 1928’de yeni Türk harfleri kabul edildi. Atatürk yurdu dolaşarak halka okuma yazmayı bizzat öğretti ve Millet Mektepleri açıldı.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Kara tahtanın başında halka ders vermesi, “Başöğretmen” unvanının en güzel örneği olduğu için seçildi.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">1926 – 1934</span><span class="zoom">🔍 Büyüt</span><img data-photo="kadin" alt="Kadın Hakları"></div>
-        <div class="card-body">
-          <h4>Kadın Hakları</h4>
-          <p>1926’da Medeni Kanun kabul edildi. Kadınlar 1930’da belediye seçimlerinde, 1934’te milletvekili seçimlerinde seçme ve seçilme hakkı kazandı.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>Toplumsal eşitliğin Cumhuriyet’in temel hedeflerinden biri olduğunu göstermek için seçtim.</p></details>
-        </div>
-      </div>
-      <div class="card">
-        <div class="img-box"><span class="tag">Eğitim ve Bilim</span><span class="zoom">🔍 Büyüt</span><img data-photo="egitim" alt="Eğitim ve Bilim"></div>
-        <div class="card-body">
-          <h4>Eğitim ve Bilim</h4>
-          <p>1924’te Tevhid-i Tedrisat Kanunu ile bütün okullar Millî Eğitim Bakanlığı’na bağlandı. Türk Tarih Kurumu (1931) ve Türk Dil Kurumu (1932) kuruldu, 1933’te üniversite reformu yapıldı.</p>
-          <details><summary>📷 Neden bu fotoğraf?</summary><p>“Hayatta en hakiki mürşit ilimdir” sözünü hatırlatan, onun çocuklara ve bilime verdiği değeri gösteren bir kare olduğu için seçtim.</p></details>
-        </div>
-      </div>
-    </div>
+  <div class="galeri karsilama">
+    <img src="ataturk1.jpg" alt="Mustafa Kemal Atatürk portresi">
+    <img src="ataturk2.jpg" alt="Atatürk'ün tarihî bir fotoğrafı">
   </div>
 </section>
 
-<section id="kronoloji">
-  <h2 class="title">⏳ Dönüm Noktaları</h2>
-  <div class="filters">
-    <button class="filter active" data-f="all">Hepsi</button>
-    <button class="filter" data-f="1">🎖️ Asker</button>
-    <button class="filter" data-f="2">🏛️ Devlet Adamı</button>
-    <button class="filter" data-f="3">💡 İnkılapçı</button>
+<section id="hayati">
+  <h2>1. Atatürk'ün Hayatı</h2>
+
+  <p>
+    Mustafa Kemal Atatürk, 1881 yılında Selanik'te doğdu. Annesi Zübeyde
+    Hanım, babası Ali Rıza Efendi'dir. Küçük yaşlardan itibaren eğitime
+    önem verdi ve askerî okullarda öğrenim gördü.
+  </p>
+
+  <p>
+    Çalışkanlığı, kararlılığı ve liderlik özellikleriyle öne çıktı.
+    Eğitim hayatı boyunca kendisini geliştirdi ve askerlik mesleğine yöneldi.
+  </p>
+
+  <div class="galeri">
+    <img src="ataturk3.jpg" alt="Atatürk'ün gençlik yılları">
+    <img src="ataturk4.jpg" alt="Atatürk'ün askerî okul yılları">
+    <img src="ataturk5.jpg" alt="Atatürk'ün gençlik döneminden fotoğraf">
   </div>
-  <div class="timeline" id="timeline"></div>
 </section>
 
-<section id="biliyor">
-  <h2 class="title">💡 Biliyor muydunuz?</h2>
-  <div class="fun">
-    <h3>Az Bilinen Bir Atatürk Bilgisi</h3>
-    <p id="fact"></p>
-    <button class="btn" id="factBtn">🎲 Başka bir bilgi göster</button>
+<section id="mucadele">
+  <h2>2. Askerlik ve Millî Mücadele</h2>
+
+  <p>
+    Atatürk, askerlik hayatında önemli başarılara imza attı. Çanakkale
+    Savaşları'nda gösterdiği başarıyla tanındı. Birinci Dünya Savaşı'ndan
+    sonra ülkenin işgale uğraması üzerine milletin bağımsızlığı için
+    mücadele etmeye karar verdi.
+  </p>
+
+  <p>
+    19 Mayıs 1919'da Samsun'a çıktı. Millî Mücadele'yi başlattı.
+    Türk milletinin birlik ve beraberliğiyle Kurtuluş Savaşı kazanıldı.
+    29 Ekim 1923'te Türkiye Cumhuriyeti ilan edildi.
+  </p>
+
+  <div class="galeri">
+    <img src="ataturk6.jpg" alt="Atatürk ve askerler">
+    <img src="ataturk7.jpg" alt="Millî Mücadele döneminden fotoğraf">
+    <img src="ataturk8.jpg" alt="Kurtuluş Savaşı döneminden fotoğraf">
+  </div>
+</section>
+
+<section id="cumhuriyet">
+  <h2>3. Cumhuriyet ve İnkılaplar</h2>
+
+  <p>
+    Türkiye Cumhuriyeti'nin ilanından sonra Atatürk, ülkenin çağdaşlaşması
+    için birçok yenilik yaptı. Eğitim, hukuk, kültür ve toplumsal yaşam
+    alanlarında önemli inkılaplar gerçekleştirildi.
+  </p>
+
+  <p>
+    Harf İnkılabı ile Latin esaslı Türk alfabesi kabul edildi. Eğitim
+    sisteminin geliştirilmesine önem verildi. Atatürk, bilimin ve aklın
+    yol göstericiliğini savundu. 10 Kasım 1938'de İstanbul'da hayatını
+    kaybetti. Fikirleri ve eserleri yaşamaya devam etmektedir.
+  </p>
+
+  <div class="galeri">
+    <img src="ataturk9.jpg" alt="Atatürk Cumhuriyet döneminde">
+    <img src="ataturk10.jpg" alt="Atatürk halkla birlikte">
+    <img src="ataturk11.jpg" alt="Atatürk'ün Cumhuriyet döneminden fotoğrafı">
   </div>
 </section>
 
 <section id="test">
-  <h2 class="title">📝 Mini Test</h2>
-  <div class="quiz" id="quiz"></div>
+  <h2>Mini Bilgi Testi</h2>
+  <p>Atatürk hakkında öğrendiklerini test et!</p>
+
+  <form id="quiz">
+
+    <div class="soru">
+      <p><strong>1. Atatürk hangi şehirde doğmuştur?</strong></p>
+      <label><input type="radio" name="s1" value="a"> Ankara</label>
+      <label><input type="radio" name="s1" value="b"> Selanik</label>
+      <label><input type="radio" name="s1" value="c"> İstanbul</label>
+    </div>
+
+    <div class="soru">
+      <p><strong>2. Türkiye Cumhuriyeti hangi tarihte ilan edilmiştir?</strong></p>
+      <label><input type="radio" name="s2" value="a"> 19 Mayıs 1919</label>
+      <label><input type="radio" name="s2" value="b"> 23 Nisan 1920</label>
+      <label><input type="radio" name="s2" value="c"> 29 Ekim 1923</label>
+    </div>
+
+    <div class="soru">
+      <p><strong>3. Atatürk hangi tarihte hayatını kaybetmiştir?</strong></p>
+      <label><input type="radio" name="s3" value="a"> 10 Kasım 1938</label>
+      <label><input type="radio" name="s3" value="b"> 30 Ağustos 1922</label>
+      <label><input type="radio" name="s3" value="c"> 29 Ekim 1923</label>
+    </div>
+
+    <button type="button" onclick="testiKontrolEt()">Cevapları Kontrol Et</button>
+    <button type="reset" onclick="document.getElementById('sonuc').textContent=''">Yeniden Çöz</button>
+
+  </form>
+
+  <p id="sonuc" aria-live="polite"></p>
 </section>
 
+</main>
+
 <footer>
-  <p><b>Atatürk’ü Tanıyalım Genel Ağ Projesi</b> 🇹🇷</p>
-  <p class="name">Hazırlayan ve Editör: Halil Alkayış</p>
-  <p>Bu sayfa “Konuşma Vakti” etkinliği için hazırlanmıştır.</p>
+  <p>Bu site Halil Alkayış tarafından hazırlanmıştır.</p>
+  <p>Atatürk'ü saygı ve minnetle anıyoruz.</p>
 </footer>
 
-<div id="lb"><img id="lbImg" alt=""><p id="lbCap"></p></div>
-<button id="top" title="Yukarı çık">↑</button>
-
 <script>
-/* ---------- FOTOĞRAFLAR ----------
-   Her fotoğraf için önce GitHub’daki "img" klasörü denenir, olmazsa Wikimedia Commons denenir.
-   İkisi de yoksa yer tutucu görsel gösterilir. */
-const PHOTOS = {
-  hero:      {local:"img/ataturk.jpg",      commons:["MustafaKemalAtaturk.jpg"], label:"Mustafa Kemal Atatürk"},
-  canakkale: {local:"img/canakkale.jpg",    commons:["Turkish trenches at Gallipoli.jpg"], label:"Çanakkale Cephesi, 1915"},
-  inonu:     {local:"img/inonu.jpg",        commons:["Kemal Paşa ve İsmet Paşa II. İnönü Muharebesi'nden sonra askerleri teftişte.jpg"], label:"İnönü Muharebeleri, 1921"},
-  kocatepe:  {local:"img/kocatepe.jpg",     commons:[], label:"Büyük Taarruz, 1922"},
-  tbmm:      {local:"img/tbmm.jpg",         commons:[], label:"TBMM’nin Açılışı, 1920"},
-  cumhuriyet:{local:"img/cumhuriyet.jpg",   commons:["MustafaKemalAtaturk.jpg"], label:"Cumhurbaşkanı Atatürk"},
-  ikimk:     {local:"img/iki-mustafa-kemal.jpg", commons:["İki Mustafa Kemal var.jpg"], label:"“İki Mustafa Kemal Var”, 1933"},
-  harf:      {local:"img/harf.jpg",         commons:[], label:"Harf İnkılabı, 1928"},
-  kadin:     {local:"img/kadin.jpg",        commons:[],
+function testiKontrolEt() {
+  const cevaplar = {
+    s1: "b",
+    s2: "c",
+    s3: "a"
+  };
+
+  let puan = 0;
+  let bos = 0;
+
+  for (const soru in cevaplar) {
+    const secilen = document.querySelector(
+      'input[name="' + soru + '"]:checked'
+    );
+
+    if (!secilen) {
+      bos++;
+    } else if (secilen.value === cevaplar[soru]) {
+      puan++;
+    }
+  }
+
+  const sonuc = document.getElementById("sonuc");
+
+  if (bos > 0) {
+    sonuc.textContent = "Lütfen tüm soruları cevapla. Boş soru sayısı: " + bos;
+  } else {
+    sonuc.textContent = "Sonucun: " + puan + " / 3. " +
+      (puan === 3
+        ? "Harika! Tüm cevapların doğru! 🎉"
+        : puan === 2
+          ? "Güzel! Biraz daha çalışarak hepsini doğru yapabilirsin."
+          : "Tekrar konuları incele ve yeniden dene!");
+  }
+}
+</script>
+
+</body>
+               </html>
+               
