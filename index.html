@@ -6,72 +6,67 @@
 <title>Atatürk'ü Tanıyalım | Hazırlayan: Halil Alkayış</title>
 <style>
 *{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:'Segoe UI', Roboto, Helvetica, Arial, sans-serif;background:#f0f2f5;color:#2c3e50;line-height:1.7}
+body{margin:0;font-family:'Segoe UI', Roboto, Arial, sans-serif;background:#f4f6f9;color:#2c3e50;line-height:1.8}
 
 /* Üst Yazar / Editör Barı */
-.editor-bar{background:#111;color:#fff;text-align:center;padding:8px 15px;font-size:13px;letter-spacing:1px;border-bottom:2px solid #e74c3c}
+.editor-bar{background:#111;color:#fff;text-align:center;padding:9px 15px;font-size:14px;letter-spacing:0.5px;border-bottom:3px solid #e74c3c}
 .editor-bar span{color:#e74c3c;font-weight:bold}
 
 /* Header / Başlık */
-header{background:linear-gradient(135deg, #c0392b, #8e44ad);color:white;text-align:center;padding:45px 20px;position:relative;overflow:hidden}
-header h1{margin:0;font-size:36px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+header{background:linear-gradient(135deg, #b71c1c, #880e4f);color:white;text-align:center;padding:50px 20px;box-shadow:0 4px 12px rgba(0,0,0,0.15)}
+header h1{margin:0;font-size:38px;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
 header p{margin-top:10px;font-size:18px;opacity:0.95}
 
 /* Navigasyon Menüsü */
-nav{background:#2c3e50;padding:12px 5px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,0.15)}
-nav a{color:#ecf0f1;text-decoration:none;margin:4px 8px;padding:8px 16px;display:inline-block;font-size:14px;font-weight:600;border-radius:20px;transition:all 0.3s;background:rgba(255,255,255,0.08)}
+nav{background:#1e272e;padding:12px 5px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 10px rgba(0,0,0,0.2)}
+nav a{color:#ecf0f1;text-decoration:none;margin:4px 6px;padding:8px 15px;display:inline-block;font-size:14px;font-weight:600;border-radius:20px;transition:all 0.3s;background:rgba(255,255,255,0.08)}
 nav a:hover{background:#e74c3c;color:white;transform:scale(1.05)}
 
 /* Hero Bölümü */
-.hero{text-align:center;padding:40px 20px;background:white;margin-bottom:25px;border-bottom:3px solid #e74c3c}
-.hero-img{width:100%;max-width:400px;height:auto;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);margin-bottom:20px;transition:transform 0.4s;cursor:pointer}
-.hero-img:hover{transform:scale(1.03) rotate(1deg)}
-.hero h2{color:#c0392b;font-size:30px;margin-bottom:12px}
-.hero p{max-width:750px;margin:auto;font-size:16px;color:#555}
-.btn{display:inline-block;margin-top:20px;padding:12px 30px;background:#e74c3c;color:white;text-decoration:none;border-radius:25px;font-weight:bold;box-shadow:0 4px 12px rgba(231,76,60,0.4);transition:all 0.3s}
+.hero{text-align:center;padding:40px 20px;background:white;margin-bottom:25px;border-bottom:3px solid #e74c3c;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+.hero-img-link{display:inline-block;position:relative}
+.hero-img{width:100%;max-width:420px;height:auto;border-radius:15px;box-shadow:0 10px 25px rgba(0,0,0,0.2);margin-bottom:15px;transition:transform 0.3s;border:3px solid #f1f2f6}
+.hero-img:hover{transform:scale(1.02)}
+.img-hint{display:block;font-size:12px;color:#7f8c8d;margin-bottom:15px;font-style:italic}
+.hero h2{color:#b71c1c;font-size:32px;margin-bottom:12px}
+.hero p{max-width:800px;margin:auto;font-size:16.5px;color:#444;text-align:justify;text-justify:inter-word;line-height:1.8}
+.btn{display:inline-block;margin-top:22px;padding:12px 32px;background:#e74c3c;color:white;text-decoration:none;border-radius:25px;font-weight:bold;box-shadow:0 4px 12px rgba(231,76,60,0.4);transition:all 0.3s}
 .btn:hover{background:#c0392b;transform:translateY(-2px)}
 
 /* İnteraktif Bilgi Kutuları */
-.fun-fact{background:linear-gradient(135deg, #2c3e50, #34495e);color:white;padding:25px;margin:30px auto;max-width:900px;border-radius:15px;box-shadow:0 6px 18px rgba(0,0,0,0.1);position:relative;transition:transform 0.3s}
-.fun-fact:hover{transform:scale(1.01)}
-.fun-fact h4{margin:0 0 10px;color:#f1c40f;font-size:18px;display:flex;align-items:center;gap:8px}
+.fun-fact{background:linear-gradient(135deg, #1e272e, #2c3e50);color:white;padding:25px;margin:35px auto;max-width:950px;border-radius:15px;box-shadow:0 6px 18px rgba(0,0,0,0.12);border-left:6px solid #f1c40f}
+.fun-fact h4{margin:0 0 10px;color:#f1c40f;font-size:19px;display:flex;align-items:center;gap:8px}
 
 /* Bölümler ve Kart Yapısı */
 section{padding:45px 20px;max-width:1150px;margin:auto;scroll-margin-top:70px}
-section h2{text-align:center;color:#c0392b;font-size:30px;margin-bottom:35px;position:relative}
+section h2{text-align:center;color:#b71c1c;font-size:32px;margin-bottom:35px;position:relative}
 section h2::after{content:'';width:80px;height:4px;background:#e74c3c;display:block;margin:10px auto 0;border-radius:2px}
 
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
-.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.06);transition:all 0.3s;border:1px solid #eee}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.card{background:white;border-radius:15px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.06);transition:all 0.3s;border:1px solid #e1e8ed;display:flex;flex-direction:column}
 .card:hover{transform:translateY(-8px);box-shadow:0 12px 30px rgba(0,0,0,0.15)}
-.card-img-container{position:relative;overflow:hidden;height:240px;background:#111;cursor:pointer}
-.card img{width:100%;height:100%;object-fit:cover;transition:transform 0.5s}
-.card:hover img{transform:scale(1.1)}
-.card-tag{position:absolute;top:12px;right:12px;background:rgba(192,57,43,0.9);color:white;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:bold;z-index:2}
-.card-body{padding:22px}
-.card h3{color:#2c3e50;margin-top:0;font-size:20px;margin-bottom:10px}
-.card p{margin:0;color:#666;font-size:14px;line-height:1.6}
+.card-img-container{position:relative;overflow:hidden;height:260px;background:#111}
+.card img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 0.5s}
+.card:hover img{transform:scale(1.08)}
+.card-tag{position:absolute;top:12px;right:12px;background:rgba(183,28,28,0.9);color:white;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:bold;z-index:2}
+.card-body{padding:22px;flex-grow:1;display:flex;flex-direction:column}
+.card h3{color:#1e272e;margin-top:0;font-size:21px;margin-bottom:12px;border-bottom:2px solid #f1f2f6;padding-bottom:8px}
+.card p{margin:0;color:#555;font-size:14.5px;line-height:1.7;text-align:justify}
 
 /* Tıklamalı Detay Kutuları */
-details{margin-top:12px;background:#f8f9fa;border-radius:8px;padding:8px 12px;border:1px solid #e9ecef}
-summary{font-weight:bold;color:#c0392b;cursor:pointer;outline:none;font-size:13px}
-details p{margin-top:8px;font-size:13px;color:#444}
+details{margin-top:15px;background:#f8f9fa;border-radius:8px;padding:10px 14px;border:1px solid #e9ecef}
+summary{font-weight:bold;color:#b71c1c;cursor:pointer;outline:none;font-size:13.5px}
+details p{margin-top:10px;font-size:13.5px;color:#444;line-height:1.6}
 
 /* Zaman Çizelgesi */
-.timeline{background:white;padding:35px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.06)}
+.timeline{background:white;padding:35px;border-radius:15px;box-shadow:0 6px 20px rgba(0,0,0,0.06);border:1px solid #e1e8ed}
 .timeline-item{padding:15px 0;border-bottom:1px solid #edf2f7;display:flex;align-items:center;gap:15px}
 .timeline-item:last-child{border-bottom:none}
-.timeline-badge{background:#e74c3c;color:white;padding:6px 14px;border-radius:20px;font-weight:bold;font-size:13px;min-width:110px;text-align:center}
-
-/* Fotoğraf Büyütme Modalı (Modal / Lightbox) */
-.modal{display:none;position:fixed;z-index:999;padding-top:60px;left:0;top:0;width:100%;height:100%;overflow:auto;background-color:rgba(0,0,0,0.9)}
-.modal-content{margin:auto;display:block;width:80%;max-width:700px;border-radius:10px;box-shadow:0 0 20px rgba(255,255,255,0.2)}
-.close{position:absolute;top:20px;right:35px;color:#f1f1f1;font-size:40px;font-weight:bold;cursor:pointer}
-.close:hover{color:#bbb}
+.timeline-badge{background:#e74c3c;color:white;padding:6px 14px;border-radius:20px;font-weight:bold;font-size:13px;min-width:120px;text-align:center}
 
 /* Footer */
-footer{background:#2c3e50;color:white;text-align:center;padding:30px 20px;margin-top:40px}
-footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
+footer{background:#1e272e;color:white;text-align:center;padding:35px 20px;margin-top:50px}
+footer p{margin:6px 0;font-size:14.5px;color:#bdc3c7}
 </style>
 </head>
 <body>
@@ -83,46 +78,56 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 
 <header>
 <h1>🇹🇷 Mustafa Kemal Atatürk</h1>
-<p>Fotoğraflarla Bir Liderin Hayatı, İlkeleri ve Dönüm Noktaları</p>
+<p>Fotoğraflarla Bir Liderin Hayatı, İlke ve İnkılapları</p>
 </header>
 
 <nav>
 <a href="#egitim">📚 Eğitim</a>
 <a href="#askerlik">🎖️ Askerlik</a>
-<a href="#devlet">🏛️ Devlet</a>
+<a href="#devlet">🏛️ Devlet Yöneticiliği</a>
 <a href="#inkilaplar">💡 İnkılaplar</a>
 <a href="#kronoloji">⏳ Kronoloji</a>
 </nav>
 
 <div class="hero">
-<img class="hero-img zoomable" src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Mustafa Kemal Atatürk">
+<a href="https://upload.wikimedia.org/wikipedia/commons/a/a8/Atat%C3%BCrk_1925.jpg" target="_blank" title="Fotoğrafı büyütmek için tıklayın">
+<img class="hero-img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Atat%C3%BCrk_1925.jpg/800px-Atat%C3%BCrk_1925.jpg" alt="Mustafa Kemal Atatürk">
+</a>
+<span class="img-hint">🔍 Fotoğrafın yüksek çözünürlüklü halini görmek için üzerine tıklayabilirsiniz.</span>
+
 <h2>Gazi Mustafa Kemal Atatürk</h2>
-<p>Türk milletinin bağımsızlık önderi ve Türkiye Cumhuriyeti'nin kurucusu. Bu özel genel ağ adresi, Atatürk'ün hayatındaki dönüm noktalarını zengin fotoğraflarla tüm dünyaya tanıtmak amacıyla hazırlanmıştır.</p>
+<p>
+Mustafa Kemal Atatürk, Türk milletinin bağımsızlık mücadelesine önderlik etmiş, askeri dehası ve devlet adamlığıyla Türkiye Cumhuriyeti'nin kuruluşunu sağlamış büyük bir liderdir. Yıkılmış bir imparatorluğun küllerinden çağdaş, demokratik ve laik bir devlet inşa eden Atatürk; sadece Türk tarihi için değil, tüm dünya tarihi için ilham kaynağı olmuş bir devrimcidir. Bu genel ağ adresi, onun hayatındaki dönüm noktalarını zengin ve özgün fotoğraflarla geniş bir çerçevede tanıtmak için hazırlanmıştır.
+</p>
 <a class="btn" href="#egitim">Sitenizi Keşfetmeye Başlayın 👇</a>
 </div>
 
 <!-- Eğlenceli Bilgi Kutusu -->
 <div class="fun-fact">
-<h4>💡 Biliyor muydunuz? (İlginç Bilgi)</h4>
-<p style="margin:0; font-size:14px;">Atatürk hayatı boyunca 4.000'den fazla kitap okumuştur! Ayrıca geometriye olan ilgisi sayesinde "üçgen, açı, teğet" gibi dilimizdeki birçok matematik terimini bizzat Türkçe kütüphanemize kazandırmıştır.</p>
+<h4>💡 Biliyor muydunuz? (Atatürk Hakkında İlginç Bilgiler)</h4>
+<p style="margin:0; font-size:15px; line-height:1.7;">
+Atatürk hayatı boyunca resmi kayıtlara göre 4.000'den fazla kitabı bizzat altını çizerek ve notlar alarak okumuştur. Ayrıca geometriye olan derin ilgisi sayesinde 1937 yılında bir geometri kitabı yazmış; günümüzde kullandığımız "üçgen, açı, teğet, boyut, yüzey, taban" gibi onlarca matematiksel terimi bizzat dilimize kazandırmıştır.
+</p>
 </div>
 
 <!-- 1. EĞİTİM HAYATI -->
 <section id="egitim">
-<h2>📚 Eğitim Hayatı</h2>
+<h2>📚 Eğitim Hayatı ve Entelektüel Gelişimi</h2>
 <div class="cards">
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">Selanik & Manastır</span>
-<img class="zoomable" src="https://i.ibb.co/6y4G3g4/ataturk-okul.jpg" onerror="this.src='https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=800&q=80'" alt="Askeri Okul Yılları">
+<a href="https://upload.wikimedia.org/wikipedia/commons/4/4e/Ataturk_during_his_military_school_years%2C_1900.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Ataturk_during_his_military_school_years%2C_1900.jpg/600px-Ataturk_during_his_military_school_years%2C_1900.jpg" alt="Askeri Okul Yılları">
+</a>
 </div>
 <div class="card-body">
 <h3>İlk Öğrenim ve Askerî Rüştiye</h3>
-<p>Şemsi Efendi Mektebinde başlayan eğitim yolculuğu, Selanik Askerî Rüştiyesinde devam etti. Zekası ve başarısı sayesinde matematik öğretmeni ona "Kemal" adını verdi.</p>
+<p>Eğitimine önce annesinin isteğiyle Mahalle Mektebinde başladı, ardından babasının isteğiyle çağdaş eğitim veren Şemsi Efendi Mektebine geçti. Selanik Askerî Rüştiyesinde okurken matematik dersindeki üstün başarısı üzerine öğretmeni Yüzbaşı Mustafa Efendi tarafından adına "Kemal" ismi eklendi.</p>
 <details>
 <summary>🔍 Detaylı Bilgi İçin Tıklayın</summary>
-<p>Manastır Askerî İdadisinde ise tarih bilincini geliştirdi ve Fransızca öğrenerek yabancı yazarların fikirleriyle tanıştı.</p>
+<p>Manastır Askerî İdadisine girdiğinde edebiyata, tarihe ve hitabete ilgi duydu. Fransızca dersleri alarak Voltaire, Rousseau ve Montesquieu gibi Aydınlanma Çağı düşünürlerinin eserlerini okumaya başladı.</p>
 </details>
 </div>
 </div>
@@ -130,14 +135,16 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">İstanbul</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=800&q=80" alt="Harp Okulu">
+<a href="https://upload.wikimedia.org/wikipedia/commons/a/a2/Ataturk%2C_Ottoman_War_Academy%2C_1901.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Ataturk%2C_Ottoman_War_Academy%2C_1901.jpg/600px-Ataturk%2C_Ottoman_War_Academy%2C_1901.jpg" alt="Harp Okulu">
+</a>
 </div>
 <div class="card-body">
-<h3>Harp Okulu Öğrenciliği (1899)</h3>
-<p>İstanbul'daki Harp Okuluna girerek askerlik mesleğinin temellerini derinleştirdi. Ülke meseleleriyle ilgilenerek arkadaş grubuna liderlik etti.</p>
+<h3>Harp Okulu Öğrenciliği (1899-1902)</h3>
+<p>13 Mart 1899 tarihinde İstanbul'daki Harp Okuluna (Mekteb-i Harbiye) girdi. Buradaki öğrenimi boyunca askeri bilgisini geliştirmenin yanında, Osmanlı Devleti'nin içinde bulunduğu siyasi ve sosyal çöküşü yakından gözlemleme fırsatı buldu.</p>
 <details>
 <summary>🔍 Detaylı Bilgi İçin Tıklayın</summary>
-<p>Okul yıllarında el yazısıyla gazete çıkararak okul arkadaşlarıyla vatanın durumunu ve çözüm yollarını paylaştı.</p>
+<p>Arkadaşlarıyla birlikte gizlice el yazısı gazete ve dergiler çıkararak vatanın kurtuluşu için fikir alışverişinde bulundu. 1902 yılında Teğmen rütbesiyle bu okuldan başarıyla mezun oldu.</p>
 </details>
 </div>
 </div>
@@ -145,14 +152,16 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">Kurmay Yüzbaşı</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Harp Akademisi">
+<a href="https://upload.wikimedia.org/wikipedia/commons/a/a0/Atat%C3%BCrk_as_a_alumni_of_Ottoman_Military_Academy%2C_1905.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Atat%C3%BCrk_as_a_alumni_of_Ottoman_Military_Academy%2C_1905.jpg/600px-Atat%C3%BCrk_as_a_alumni_of_Ottoman_Military_Academy%2C_1905.jpg" alt="Harp Akademisi">
+</a>
 </div>
 <div class="card-body">
 <h3>Harp Akademisi Mezuniyeti (1905)</h3>
-<p>Başarılarla dolu eğitim hayatını Harp Akademisini dereceyle bitirerek tamamladı ve "Kurmay Yüzbaşı" rütbesiyle vatan hizmetine başladı.</p>
+<p>Harp Okulundaki başarısı üzerine üst öğrenim olan Harp Akademisine kabul edildi. 11 Ocak 1905 tarihinde Harp Akademisinden "Kurmay Yüzbaşı" rütbesiyle mezun olarak Osmanlı ordusundaki resmi askeri görevine adım attı.</p>
 <details>
 <summary>🔍 Detaylı Bilgi İçin Tıklayın</summary>
-<p>İlk görev yeri olan Şam'daki 5. Ordu'ya atanarak askerî zekasını sahada gösterme fırsatı buldu.</p>
+<p>Akademi mezuniyetinin ardından stratejik ve askeri zekasını sahada uygulamak üzere ilk görev yeri olan Şam'daki 5. Ordu emrine atandı ve burada Vatan ve Hürriyet Cemiyeti'ni kurdu.</p>
 </details>
 </div>
 </div>
@@ -162,39 +171,45 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 
 <!-- 2. ASKERLİK HAYATI -->
 <section id="askerlik">
-<h2>🎖️ Askerlik Hayatı</h2>
+<h2>🎖️ Askerlik Hayatı ve Cephe Mücadeleleri</h2>
 <div class="cards">
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">1911</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=800&q=80" alt="Trablusgarp">
+<a href="https://upload.wikimedia.org/wikipedia/commons/e/e0/Mustafa_Kemal_Atat%C3%BCrk_Trablusgarp_1911.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Mustafa_Kemal_Atat%C3%BCrk_Trablusgarp_1911.jpg/600px-Mustafa_Kemal_Atat%C3%BCrk_Trablusgarp_1911.jpg" alt="Trablusgarp Savaşı">
+</a>
 </div>
 <div class="card-body">
-<h3>Trablusgarp Savaşı</h3>
-<p>İtalyan işgaline karşı gönüllü olarak Kuzey Afrika'ya gitti. Derne ve Tobruk'ta yerli halkı örgütleyerek büyük bir direniş başlattı.</p>
+<h3>Trablusgarp Savaşı (1911-1912)</h3>
+<p>İtalya'nın Trablusgarp'ı (Bugünkü Libya) işgali üzerine Mustafa Kemal, tanınmamak için "Gazeteci Şerif" kimliğiyle gizlice bölgeye gitti. Derne ve Tobruk'ta dağınık haldeki yerli halkı örgütleyerek İtalyan birliklerine karşı destansı bir gerilla direnişi örgütledi ve ilk büyük askeri başarısını kazandı.</p>
 </div>
 </div>
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">1915</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80" alt="Çanakkale">
+<a href="https://upload.wikimedia.org/wikipedia/commons/2/22/Mustafa_Kemal_Atat%C3%BCrk_Anfartalar_1915.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Mustafa_Kemal_Atat%C3%BCrk_Anfartalar_1915.jpg/600px-Mustafa_Kemal_Atat%C3%BCrk_Anfartalar_1915.jpg" alt="Çanakkale Zaferi">
+</a>
 </div>
 <div class="card-body">
-<h3>Çanakkale Zaferi</h3>
-<p>"Size ben taarruzu değil, ölmeyi emrediyorum!" emriyle Çanakkale'de geçit vermedi ve "Anafartalar Kahramanı" olarak tanındı.</p>
+<h3>Çanakkale Zaferi (1915)</h3>
+<p>1. Dünya Savaşı'nda Çanakkale Cephesi'nde 19. Tümen Komutanı olarak görev aldı. Conkbayırı, Arıburnu ve Anafartalar'da müttefik düşman ordularını durdurdu. "Size ben taarruzu değil, ölmeyi emrediyorum!" tarihi emriyle savaşın ve dünya tarihinin gidişatını değiştirerek "Anafartalar Kahramanı" oldu.</p>
 </div>
 </div>
 
 <div class="card">
 <div class="card-img-container">
-<span class="card-tag">1922</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=800&q=80" alt="Büyük Taarruz">
+<span class="card-tag">1921-1922</span>
+<a href="https://upload.wikimedia.org/wikipedia/commons/5/52/Ataturk_Kocatepe.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Ataturk_Kocatepe.jpg/600px-Ataturk_Kocatepe.jpg" alt="Büyük Taarruz Kocatepe">
+</a>
 </div>
 <div class="card-body">
-<h3>Büyük Taarruz ve Başkomutanlık</h3>
-<p>Kurtuluş Savaşı'nın karar anını Kocatepe'den sevk ve idare ederek Türk ordusunu kesin zafere ulaştırdı.</p>
+<h3>Kurtuluş Savaşı ve Kocatepe</h3>
+<p>19 Mayıs 1919'da Samsun'a çıkarak Millî Mücadele'yi başlattı. Sakarya Meydan Muharebesi'ni sevk ve idare ederek "Gazi" unvanı ve Mareşallik rütbesi aldı. 26 Ağustos 1922'de başlayan Büyük Taarruz'u Kocatepe'den bizzat yöneterek Türk vatanını işgalden tamamen kurtardı.</p>
 </div>
 </div>
 
@@ -203,39 +218,45 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 
 <!-- 3. DEVLET YÖNETİCİLİĞİ -->
 <section id="devlet">
-<h2>🏛️ Devlet Yöneticiliği</h2>
+<h2>🏛️ Devlet Yöneticiliği ve Siyasi Dehası</h2>
 <div class="cards">
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">23 Nisan 1920</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1526481280693-3bfa7568e0f3?auto=format&fit=crop&w=800&q=80" alt="TBMM Açılışı">
+<a href="https://upload.wikimedia.org/wikipedia/commons/1/18/Atat%C3%BCrk_TBMM_A%C3%A7%C4%B1l%C4%B1%C5%9F%C4%B1.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Atat%C3%BCrk_TBMM_A%C3%A7%C4%B1l%C4%B1%C5%9F%C4%B1.jpg/600px-Atat%C3%BCrk_TBMM_A%C3%A7%C4%B1l%C4%B1%C5%9F%C4%B1.jpg" alt="TBMM Açılışı">
+</a>
 </div>
 <div class="card-body">
-<h3>TBMM'nin Kurulması</h3>
-<p>Ankara'da Türkiye Büyük Millet Meclisi'ni açarak milletin egemenliğini kendi eline almasını sağladı.</p>
+<h3>TBMM'nin Kurulması ve Millî Egemenlik</h3>
+<p>Ankara'da 23 Nisan 1920 tarihinde Türkiye Büyük Millet Meclisi'ni açarak "Egemenlik kayıtsız şartsız milletindir" ilkesini ilan etti. İşgal altındaki bir ülkede kararları halkın temsilcileriyle alarak meclis hükümeti sistemini kurdu ve Meclis Başkanı seçildi.</p>
 </div>
 </div>
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">29 Ekim 1923</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=800&q=80" alt="Cumhuriyet">
+<a href="https://upload.wikimedia.org/wikipedia/commons/8/87/Atat%C3%BCrk_Cumhuriyet.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Atat%C3%BCrk_Cumhuriyet.jpg/600px-Atat%C3%BCrk_Cumhuriyet.jpg" alt="Cumhuriyetin İlanı">
+</a>
 </div>
 <div class="card-body">
-<h3>Cumhuriyetin İlanı</h3>
-<p>Cumhuriyet ilan edildi ve oy birliğiyle Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı seçildi.</p>
+<h3>Cumhuriyet'in İlanı ve İlk Cumhurbaşkanlığı</h3>
+<p>29 Ekim 1923'te Cumhuriyet'in ilanıyla birlikte yeni Türk devletinin yönetim şekli netleşti. Mustafa Kemal Atatürk, yapılan seçimle Türkiye Cumhuriyeti'nin ilk Cumhurbaşkanı oldu. Ülkeyi muasır medeniyetler seviyesinin üzerine çıkarma hedefini koydu.</p>
 </div>
 </div>
 
 <div class="card">
 <div class="card-img-container">
 <span class="card-tag">Diplomasi</span>
-<img class="zoomable" src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Barış ve Diplomasi">
+<a href="https://upload.wikimedia.org/wikipedia/commons/9/91/Ataturk_foreign_guests.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Ataturk_foreign_guests.jpg/600px-Ataturk_foreign_guests.jpg" alt="Dış Politika ve Barış">
+</a>
 </div>
 <div class="card-body">
-<h3>Yurtta Sulh, Cihanda Sulh</h3>
-<p>Dünya devletleriyle barışçıl ilişkiler kurarak Türkiye'yi saygın bir uluslararası konuma getirdi.</p>
+<h3>Barışçı Dış Politika ve Uluslararası Saygınlık</h3>
+<p>"Yurtta sulh, cihanda sulh" ilkesini benimseyerek Lozan Barış Antlaşması ve Montrö Boğazlar Sözleşmesi gibi tarihi diplomasi zaferlerine imza attı. Balkan Antantı ve Sadabat Paktı ile bölgesel barışı sağladı, tüm dünya liderlerinin saygısını kazandı.</p>
 </div>
 </div>
 
@@ -244,9 +265,71 @@ footer p{margin:5px 0;font-size:14px;color:#bdc3c7}
 
 <!-- 4. İNKILAPLAR VE ÇAĞDAŞLAŞMA -->
 <section id="inkilaplar">
-<h2>💡 İnkılaplar ve Yenilikler</h2>
+<h2>💡 İnkılaplar ve Toplumsal Dönüşüm</h2>
 <div class="cards">
 
 <div class="card">
-<div class="card-img-container
-  
+<div class="card-img-container">
+<span class="card-tag">1928</span>
+<a href="https://upload.wikimedia.org/wikipedia/commons/c/c2/Ataturk_Harf_Devrimi_Kayseri.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Ataturk_Harf_Devrimi_Kayseri.jpg/600px-Ataturk_Harf_Devrimi_Kayseri.jpg" alt="Harf İnkılabı">
+</a>
+</div>
+<div class="card-body">
+<h3>Harf Devrimi ve Başöğretmenlik</h3>
+<p>1 Kasım 1928'de Yeni Türk Harfleri kabul edildi. Atatürk, kara tahtanın başına geçerek yurt gezilerinde halka bizzat okuma-yazma öğretti. Millet Mektepleri açılarak kısa sürede okuma-yazma oranında büyük bir patlama yaşandı ve kendisine "Başöğretmen" unvanı verildi.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img-container">
+<span class="card-tag">Eğitim & Bilim</span>
+<a href="https://upload.wikimedia.org/wikipedia/commons/4/41/Ataturk_visits_a_school.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ataturk_visits_a_school.jpg/600px-Ataturk_visits_a_school.jpg" alt="Eğitim Hamlesi">
+</div>
+<div class="card-body">
+<h3>Eğitim Devrimi ve Üniversite Reformu</h3>
+<p>Tevhid-i Tedrisat Kanunu ile eğitimde birlik sağlandı. Laik, çağdaş ve bilimsel eğitim sistemine geçildi. 1933 Üniversite Reformu ile İstanbul Üniversitesi kuruldu, Türk Tarih Kurumu ve Türk Dil Kurumu açılarak milli kültür koruma altına alındı.</p>
+</div>
+</div>
+
+<div class="card">
+<div class="card-img-container">
+<span class="card-tag">Toplumsal Eşitlik</span>
+<a href="https://upload.wikimedia.org/wikipedia/commons/a/a1/Atat%C3%BCrk_ve_kad%C1%B1nlar.jpg" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Atat%C3%BCrk_ve_kad%C1%B1nlar.jpg/600px-Atat%C3%BCrk_ve_kad%C1%B1nlar.jpg" alt="Kadın Hakları">
+</div>
+<div class="card-body">
+<h3>Türk Kadınına Sağlanan Haklar</h3>
+<p>1926 Medeni Kanun ile kadına hukuki eşitlik sağlandı. 1930'da belediye, 1934'te ise milletvekili seçme ve seçilme hakkı verilerek Türk kadını, birçok Avrupa ülkesindeki kadınlardan çok daha önce siyasi haklarına kavuştu.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- 5. KRONOLOJİ -->
+<section id="kronoloji">
+<h2>⏳ Hayatındaki Dönüm Noktaları (Kronoloji)</h2>
+<div class="timeline">
+<div class="timeline-item"><div class="timeline-badge">1881</div><div>Selanik'te dünyaya gözlerini açtı.</div></div>
+<div class="timeline-item"><div class="timeline-badge">1905</div><div>Harp Akademisinden Kurmay Yüzbaşı olarak mezun oldu.</div></div>
+<div class="timeline-item"><div class="timeline-badge">1911</div><div>Trablusgarp Savaşı'nda ilk büyük askeri başarısını elde etti.</div></div>
+<div class="timeline-item"><div class="timeline-badge">1915</div><div>Çanakkale'de destansı bir savunma ile düşmanı durdurdu.</div></div>
+<div class="timeline-item"><div class="timeline-badge">19 Mayıs 1919</div><div>Samsun'a çıkarak Millî Mücadele'yi başlattı.</div></div>
+<div class="timeline-item"><div class="timeline-badge">23 Nisan 1920</div><div>Ankara'da Türkiye Büyük Millet Meclisi açıldı.</div></div>
+<div class="timeline-item"><div class="timeline-badge">30 Ağustos 1922</div><div>Büyük Taarruz zaferle sonuçlandı, vatan kurtarıldı.</div></div>
+<div class="timeline-item"><div class="timeline-badge">29 Ekim 1923</div><div>Türkiye Cumhuriyeti ilan edildi, ilk Cumhurbaşkanı oldu.</div></div>
+<div class="timeline-item"><div class="timeline-badge">1 Kasım 1928</div><div>Harf İnkılabı yapıldı ve okuma-yazma seferberliği başladı.</div></div>
+<div class="timeline-item"><div class="timeline-badge">10 Kasım 1938</div><div>İstanbul Dolmabahçe Sarayı'nda ebediyete intikal etti.</div></div>
+</div>
+</section>
+
+<footer>
+<p><b>Atatürk'ü Tanıyalım Genel Ağ Projesi</b> 🇹🇷</p>
+<p>Tasarlayan ve Hazırlayan: <b>Halil Alkayış</b></p>
+</footer>
+
+</body>
+  </html>
+                                                                                                                                                
