@@ -112,23 +112,57 @@ button:hover {
   background: #7e1010;
 }
 
+button:disabled {
+  cursor: default;
+  opacity: 1;
+}
+
 .soru {
   padding: 15px;
   margin: 15px 0;
   background: #f8f8f8;
+  border: 1px solid #e1e1e1;
   border-radius: 8px;
 }
 
 .soru label {
   display: block;
-  margin: 7px 0;
+  margin: 9px 0;
+  padding: 9px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   cursor: pointer;
+}
+
+.soru label:hover {
+  background: #f1eeee;
+}
+
+.soru label.dogru {
+  background: #d9f5df;
+  border-color: #26843b;
+}
+
+.soru label.yanlis {
+  background: #ffdddd;
+  border-color: #c62828;
+}
+
+.soru input {
+  margin-right: 7px;
+}
+
+.geri-bildirim {
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 #sonuc {
   font-size: 19px;
   font-weight: bold;
-  margin-top: 15px;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 8px;
 }
 
 footer {
@@ -156,6 +190,10 @@ footer {
   .karsilama img {
     height: 220px;
   }
+
+  nav a {
+    margin: 5px;
+  }
 }
 </style>
 </head>
@@ -172,7 +210,7 @@ footer {
   <a href="#hayati">Hayatı</a>
   <a href="#mucadele">Millî Mücadele</a>
   <a href="#cumhuriyet">Cumhuriyet</a>
-  <a href="#test">Mini Test</a>
+  <a href="#test">Bilgi Testi</a>
 </nav>
 
 <main>
@@ -182,8 +220,17 @@ footer {
 
   <p>
     Mustafa Kemal Atatürk, Türkiye Cumhuriyeti'nin kurucusu ve ilk
-    cumhurbaşkanıdır. Hayatı boyunca Türk milletinin bağımsızlığı ve
-    gelişmesi için çalışmıştır. Başarılarıyla tarihe yön vermiştir.
+    cumhurbaşkanıdır. Türk milletinin bağımsızlığı için mücadele etmiş,
+    Millî Mücadele'ye liderlik etmiş ve yeni Türk devletinin kurulmasında
+    önemli rol oynamıştır. Atatürk, ülkenin gelişmesi için eğitim, bilim,
+    hukuk ve çağdaşlaşmaya önem vermiştir.
+  </p>
+
+  <p>
+    Onun hayatı, zor koşullar karşısında kararlılıkla çalışmanın ve
+    milletin bağımsızlığı için birlik olmanın önemli bir örneğidir.
+    Gerçekleştirilen yenilikler, Türkiye'nin siyasi ve toplumsal yapısında
+    büyük değişimlere katkıda bulunmuştur.
   </p>
 
   <div class="galeri karsilama">
@@ -193,17 +240,29 @@ footer {
 </section>
 
 <section id="hayati">
-  <h2>1. Atatürk'ün Hayatı</h2>
+  <h2>1. Atatürk'ün Hayatı ve Eğitim Yılları</h2>
 
   <p>
-    Mustafa Kemal Atatürk, 1881 yılında Selanik'te doğdu. Annesi Zübeyde
-    Hanım, babası Ali Rıza Efendi'dir. Küçük yaşlardan itibaren eğitime
-    önem verdi ve askerî okullarda öğrenim gördü.
+    Mustafa Kemal Atatürk, 1881 yılında Selanik'te doğdu. Babası Ali Rıza
+    Efendi, annesi Zübeyde Hanım'dır. Makbule Atadan ise kız kardeşidir.
+    Çocukluk yıllarında eğitimine önem verdi ve farklı okullarda öğrenim
+    gördü. Önce Mahalle Mektebine, ardından Şemsi Efendi Mektebine devam etti.
   </p>
 
   <p>
-    Çalışkanlığı, kararlılığı ve liderlik özellikleriyle öne çıktı.
-    Eğitim hayatı boyunca kendisini geliştirdi ve askerlik mesleğine yöneldi.
+    Daha sonra Selanik Askerî Rüştiyesinde okudu. Matematik öğretmeni,
+    onun başarılı çalışmalarını fark ederek kendisine Kemal adını verdi.
+    Manastır Askerî İdadisindeki öğreniminin ardından İstanbul'da Harp
+    Okulunu ve Harp Akademisini bitirdi. Bu eğitimler onun askerlik
+    mesleğinde ilerlemesine ve liderlik özelliklerini geliştirmesine
+    yardımcı oldu.
+  </p>
+
+  <p>
+    Atatürk yalnızca askerî konularla ilgilenmedi; tarih, toplum, eğitim
+    ve ülkenin geleceği üzerine de düşündü. Öğrenmeye ve kendini geliştirmeye
+    verdiği önem, ilerleyen yıllarda gerçekleştireceği çalışmalara temel
+    oluşturdu.
   </p>
 
   <div class="galeri">
@@ -217,16 +276,28 @@ footer {
   <h2>2. Askerlik ve Millî Mücadele</h2>
 
   <p>
-    Atatürk, askerlik hayatında önemli başarılara imza attı. Çanakkale
-    Savaşları'nda gösterdiği başarıyla tanındı. Birinci Dünya Savaşı'ndan
-    sonra ülkenin işgale uğraması üzerine milletin bağımsızlığı için
-    mücadele etmeye karar verdi.
+    Mustafa Kemal, askerî eğitimini tamamladıktan sonra Osmanlı ordusunda
+    görev yaptı. Trablusgarp Savaşı ve Balkan Savaşları döneminde çeşitli
+    görevler üstlendi. Birinci Dünya Savaşı sırasında Çanakkale Cephesi'nde
+    gösterdiği başarılarla tanındı. Özellikle 1915 yılında Anafartalar
+    bölgesindeki askerî liderliğiyle öne çıktı.
   </p>
 
   <p>
-    19 Mayıs 1919'da Samsun'a çıktı. Millî Mücadele'yi başlattı.
-    Türk milletinin birlik ve beraberliğiyle Kurtuluş Savaşı kazanıldı.
-    29 Ekim 1923'te Türkiye Cumhuriyeti ilan edildi.
+    Birinci Dünya Savaşı'nın ardından Osmanlı Devleti yenildi ve ülkenin
+    çeşitli bölgeleri işgal edilmeye başladı. Mustafa Kemal, milletin
+    bağımsızlığını kazanması amacıyla mücadeleye girişti. 19 Mayıs 1919'da
+    Samsun'a çıktı. Amasya Genelgesi yayımlandı; Erzurum ve Sivas
+    kongrelerinde Millî Mücadele'nin hedefleri ve örgütlenmesi üzerinde
+    duruldu.
+  </p>
+
+  <p>
+    23 Nisan 1920'de Türkiye Büyük Millet Meclisi Ankara'da açıldı.
+    Kurtuluş Savaşı boyunca Türk ordusu çeşitli cephelerde mücadele etti.
+    Sakarya Meydan Muharebesi ve Büyük Taarruz önemli dönüm noktaları oldu.
+    Kazanılan başarılar, Türkiye'nin bağımsızlığının sağlanmasında belirleyici
+    rol oynadı.
   </p>
 
   <div class="galeri">
@@ -240,16 +311,34 @@ footer {
   <h2>3. Cumhuriyet ve İnkılaplar</h2>
 
   <p>
-    Türkiye Cumhuriyeti'nin ilanından sonra Atatürk, ülkenin çağdaşlaşması
-    için birçok yenilik yaptı. Eğitim, hukuk, kültür ve toplumsal yaşam
-    alanlarında önemli inkılaplar gerçekleştirildi.
+    Millî Mücadele'nin başarıya ulaşmasının ardından yeni devletin yönetim
+    biçimi belirlendi. 29 Ekim 1923'te Cumhuriyet ilan edildi ve Mustafa
+    Kemal Atatürk Türkiye Cumhuriyeti'nin ilk cumhurbaşkanı oldu. Cumhuriyet
+    yönetiminde egemenliğin millete ait olması temel ilkelerden biridir.
   </p>
 
   <p>
-    Harf İnkılabı ile Latin esaslı Türk alfabesi kabul edildi. Eğitim
-    sisteminin geliştirilmesine önem verildi. Atatürk, bilimin ve aklın
-    yol göstericiliğini savundu. 10 Kasım 1938'de İstanbul'da hayatını
-    kaybetti. Fikirleri ve eserleri yaşamaya devam etmektedir.
+    Atatürk döneminde eğitim, hukuk, kültür ve toplumsal yaşam alanlarında
+    birçok yenilik gerçekleştirildi. 1924 yılında Tevhid-i Tedrisat Kanunu
+    kabul edilerek eğitim kurumlarının birleştirilmesi amaçlandı. 1926
+    yılında Türk Medeni Kanunu kabul edildi. 1928 yılında Latin esaslı
+    Türk alfabesi kabul edildi ve yeni harflerin öğretilmesi için çalışmalar
+    yürütüldü.
+  </p>
+
+  <p>
+    Atatürk, toplumun gelişmesinde bilimin, aklın ve eğitimin önemini
+    vurguladı. Kadınların toplumsal ve siyasi yaşama katılması konusunda
+    önemli değişiklikler yaşandı. Türkiye'nin çağdaşlaşması amacıyla
+    gerçekleştirilen bu yenilikler, ülkenin kurumlarını ve günlük yaşamını
+    etkiledi.
+  </p>
+
+  <p>
+    Mustafa Kemal Atatürk, 10 Kasım 1938'de İstanbul'da Dolmabahçe
+    Sarayı'nda hayatını kaybetti. Bağımsızlık mücadelesi, kurduğu Cumhuriyet
+    ve gerçekleştirdiği yenilikler nedeniyle Türkiye tarihinde önemli bir
+    yere sahiptir.
   </p>
 
   <div class="galeri">
@@ -259,39 +348,45 @@ footer {
   </div>
 </section>
 
+<section id="ilkeler">
+  <h2>4. Atatürk İlkeleri</h2>
+
+  <p>
+    Atatürk'ün düşünce sisteminde Cumhuriyetçilik, Milliyetçilik, Halkçılık,
+    Devletçilik, Laiklik ve İnkılapçılık olmak üzere altı temel ilke bulunur.
+    Bu ilkeler, yeni Türk devletinin yönetiminde ve toplumun gelişmesinde
+    yol gösterici olmuştur.
+  </p>
+
+  <p>
+    <strong>Cumhuriyetçilik</strong>, egemenliğin millete ait olmasını ve
+    halkın yönetime katılmasını esas alır. <strong>Milliyetçilik</strong>,
+    milletin bağımsızlığına, birlik ve beraberliğine önem verir.
+    <strong>Halkçılık</strong>, kanun önünde eşitliği ve toplum yararını
+    savunur. <strong>Devletçilik</strong>, ekonomik kalkınmada devletin
+    gerektiğinde etkin rol üstlenmesini ifade eder. <strong>Laiklik</strong>,
+    devlet ve hukuk düzeninin din kurallarından bağımsız biçimde
+    düzenlenmesiyle ilişkilidir. <strong>İnkılapçılık</strong> ise çağın
+    ihtiyaçlarına uygun yeniliklerin sürdürülmesini amaçlar.
+  </p>
+</section>
+
 <section id="test">
-  <h2>Mini Bilgi Testi</h2>
-  <p>Atatürk hakkında öğrendiklerini test et!</p>
+  <h2>Atatürk Bilgi Testi</h2>
 
-  <form id="quiz">
+  <p>
+    <strong>Testi yapan: Halil Alkayış</strong>
+  </p>
 
-    <div class="soru">
-      <p><strong>1. Atatürk hangi şehirde doğmuştur?</strong></p>
-      <label><input type="radio" name="s1" value="a"> Ankara</label>
-      <label><input type="radio" name="s1" value="b"> Selanik</label>
-      <label><input type="radio" name="s1" value="c"> İstanbul</label>
-    </div>
+  <p>
+    Toplam 10 soru vardır. Her soru 10 puandır. Bir şıkkı seçtiğinde
+    cevabın hemen değerlendirilir. Seçtiğin cevabı değiştiremezsin.
+    Testi baştan çözmek için en alttaki "Tekrar Çöz" düğmesine bas.
+  </p>
 
-    <div class="soru">
-      <p><strong>2. Türkiye Cumhuriyeti hangi tarihte ilan edilmiştir?</strong></p>
-      <label><input type="radio" name="s2" value="a"> 19 Mayıs 1919</label>
-      <label><input type="radio" name="s2" value="b"> 23 Nisan 1920</label>
-      <label><input type="radio" name="s2" value="c"> 29 Ekim 1923</label>
-    </div>
-
-    <div class="soru">
-      <p><strong>3. Atatürk hangi tarihte hayatını kaybetmiştir?</strong></p>
-      <label><input type="radio" name="s3" value="a"> 10 Kasım 1938</label>
-      <label><input type="radio" name="s3" value="b"> 30 Ağustos 1922</label>
-      <label><input type="radio" name="s3" value="c"> 29 Ekim 1923</label>
-    </div>
-
-    <button type="button" onclick="testiKontrolEt()">Cevapları Kontrol Et</button>
-    <button type="reset" onclick="document.getElementById('sonuc').textContent=''">Yeniden Çöz</button>
-
-  </form>
-
-  <p id="sonuc" aria-live="polite"></p>
+  <div id="quiz"></div>
+  <div id="sonuc" aria-live="polite"></div>
+  <button type="button" id="tekrar" onclick="testiBaslat()">Tekrar Çöz</button>
 </section>
 
 </main>
@@ -302,43 +397,202 @@ footer {
 </footer>
 
 <script>
-function testiKontrolEt() {
-  const cevaplar = {
-    s1: "b",
-    s2: "c",
-    s3: "a"
-  };
+const sorular = [
+  {
+    soru: "Mustafa Kemal Atatürk hangi şehirde doğmuştur?",
+    secenekler: ["Ankara", "Selanik", "İstanbul", "Manastır"],
+    cevap: 1
+  },
+  {
+    soru: "Atatürk'ün annesinin adı nedir?",
+    secenekler: ["Makbule Hanım", "Latife Hanım", "Zübeyde Hanım", "Afet İnan"],
+    cevap: 2
+  },
+  {
+    soru: "Atatürk'e 'Kemal' adını hangi okulda matematik öğretmeni vermiştir?",
+    secenekler: [
+      "Selanik Askerî Rüştiyesi",
+      "Harp Akademisi",
+      "Şemsi Efendi Mektebi",
+      "Manastır Askerî İdadisi"
+    ],
+    cevap: 0
+  },
+  {
+    soru: "Atatürk hangi tarihte Samsun'a çıkmıştır?",
+    secenekler: [
+      "23 Nisan 1920",
+      "29 Ekim 1923",
+      "30 Ağustos 1922",
+      "19 Mayıs 1919"
+    ],
+    cevap: 3
+  },
+  {
+    soru: "Türkiye Büyük Millet Meclisi hangi tarihte açılmıştır?",
+    secenekler: [
+      "23 Nisan 1920",
+      "19 Mayıs 1919",
+      "29 Ekim 1923",
+      "10 Kasım 1938"
+    ],
+    cevap: 0
+  },
+  {
+    soru: "Türkiye Cumhuriyeti hangi tarihte ilan edilmiştir?",
+    secenekler: [
+      "19 Mayıs 1919",
+      "23 Nisan 1920",
+      "29 Ekim 1923",
+      "30 Ağustos 1922"
+    ],
+    cevap: 2
+  },
+  {
+    soru: "Atatürk, Birinci Dünya Savaşı sırasında hangi cephedeki başarılarıyla tanınmıştır?",
+    secenekler: [
+      "Galiçya Cephesi",
+      "Çanakkale Cephesi",
+      "Romanya Cephesi",
+      "Kafkasya Cephesi"
+    ],
+    cevap: 1
+  },
+  {
+    soru: "Tevhid-i Tedrisat Kanunu'nun temel amaçlarından biri nedir?",
+    secenekler: [
+      "Bütün okulları kapatmak",
+      "Eğitimi yalnızca askerî okullarla sınırlamak",
+      "Eğitim kurumlarını birleştirmek",
+      "Yurt dışına eğitimi taşımak"
+    ],
+    cevap: 2
+  },
+  {
+    soru: "Latin esaslı Türk alfabesi hangi yıl kabul edilmiştir?",
+    secenekler: ["1923", "1924", "1926", "1928"],
+    cevap: 3
+  },
+  {
+    soru: "Atatürk'ün altı temel ilkesinden biri aşağıdakilerden hangisidir?",
+    secenekler: [
+      "Saltanatçılık",
+      "Sömürgecilik",
+      "Laiklik",
+      "Mutlak monarşi"
+    ],
+    cevap: 2
+  }
+];
 
-  let puan = 0;
-  let bos = 0;
+let cevaplanan = new Set();
+let dogruSayisi = 0;
 
-  for (const soru in cevaplar) {
-    const secilen = document.querySelector(
-      'input[name="' + soru + '"]:checked'
-    );
+function testiBaslat() {
+  cevaplanan = new Set();
+  dogruSayisi = 0;
 
-    if (!secilen) {
-      bos++;
-    } else if (secilen.value === cevaplar[soru]) {
-      puan++;
-    }
+  const quiz = document.getElementById("quiz");
+  quiz.innerHTML = "";
+
+  document.getElementById("sonuc").textContent =
+    "Puanın: 0 / 100 — Henüz cevaplanmış soru yok.";
+
+  sorular.forEach((soru, index) => {
+    const kutu = document.createElement("div");
+    kutu.className = "soru";
+    kutu.id = "soru-" + index;
+
+    const baslik = document.createElement("p");
+    const kalin = document.createElement("strong");
+    kalin.textContent = (index + 1) + ". " + soru.soru;
+    baslik.appendChild(kalin);
+    kutu.appendChild(baslik);
+
+    soru.secenekler.forEach((secenek, secenekIndex) => {
+      const label = document.createElement("label");
+      const radio = document.createElement("input");
+
+      radio.type = "radio";
+      radio.name = "soru-" + index;
+      radio.value = secenekIndex;
+
+      label.appendChild(radio);
+      label.appendChild(
+        document.createTextNode(
+          " " + String.fromCharCode(65 + secenekIndex) + ") " + secenek
+        )
+      );
+
+      radio.addEventListener("change", function() {
+        cevabiKontrolEt(index, secenekIndex, kutu);
+      });
+
+      kutu.appendChild(label);
+    });
+
+    const geriBildirim = document.createElement("p");
+    geriBildirim.className = "geri-bildirim";
+    geriBildirim.id = "geri-" + index;
+    geriBildirim.setAttribute("aria-live", "polite");
+    kutu.appendChild(geriBildirim);
+
+    quiz.appendChild(kutu);
+  });
+}
+
+function cevabiKontrolEt(index, secilen, kutu) {
+  if (cevaplanan.has(index)) return;
+
+  cevaplanan.add(index);
+
+  const dogruCevap = sorular[index].cevap;
+  const etiketler = kutu.querySelectorAll("label");
+  const secenekler = kutu.querySelectorAll("input");
+
+  secenekler.forEach(radio => {
+    radio.disabled = true;
+  });
+
+  if (secilen === dogruCevap) {
+    dogruSayisi++;
+    etiketler[secilen].classList.add("dogru");
+    document.getElementById("geri-" + index).textContent =
+      "Doğru cevap! +10 puan";
+    document.getElementById("geri-" + index).style.color = "#207a32";
+  } else {
+    etiketler[secilen].classList.add("yanlis");
+    etiketler[dogruCevap].classList.add("dogru");
+    document.getElementById("geri-" + index).textContent =
+      "Yanlış cevap. Doğru cevap: " +
+      String.fromCharCode(65 + dogruCevap) + ") " +
+      sorular[index].secenekler[dogruCevap];
+    document.getElementById("geri-" + index).style.color = "#b00020";
   }
 
+  puaniGoster();
+}
+
+function puaniGoster() {
+  const puan = dogruSayisi * 10;
+  const cevaplananSayi = cevaplanan.size;
   const sonuc = document.getElementById("sonuc");
 
-  if (bos > 0) {
-    sonuc.textContent = "Lütfen tüm soruları cevapla. Boş soru sayısı: " + bos;
+  if (cevaplananSayi < sorular.length) {
+    sonuc.textContent =
+      "Puanın: " + puan + " / 100 — Cevaplanan soru: " +
+      cevaplananSayi + " / 10";
   } else {
-    sonuc.textContent = "Sonucun: " + puan + " / 3. " +
-      (puan === 3
-        ? "Harika! Tüm cevapların doğru! 🎉"
-        : puan === 2
-          ? "Güzel! Biraz daha çalışarak hepsini doğru yapabilirsin."
-          : "Tekrar konuları incele ve yeniden dene!");
+    sonuc.innerHTML =
+      "<strong>Test tamamlandı, Halil Alkayış!</strong><br>" +
+      "Doğru: " + dogruSayisi + " / 10<br>" +
+      "Yanlış: " + (10 - dogruSayisi) + " / 10<br>" +
+      "Son puanın: " + puan + " / 100";
   }
 }
+
+testiBaslat();
 </script>
 
 </body>
-               </html>
-               
+</html>
